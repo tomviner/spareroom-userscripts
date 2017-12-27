@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spareroom Directions to Work
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
 // @license      MIT
