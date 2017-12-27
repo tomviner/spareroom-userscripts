@@ -7,14 +7,13 @@
 // @license      MIT
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
-// @match        ://*spareroom.co.uk/flatshare/*
-// @match        ://*spareroom.com/flatshare/*
-// @match        ://*spareroom.co.uk/roommate/*
-// @match        ://*spareroom.com/roommate/*
-// @match        ://*spareroom.co.uk/rooms-for-rent/*
-// @match        ://*spareroom.com/rooms-for-rent/*
+// @match        *://*.spareroom.co.uk/flatshare/*
+// @match        *://*.spareroom.com/flatshare/*
+// @match        *://*.spareroom.co.uk/roommate/*
+// @match        *://*.spareroom.com/roommate/*
+// @match        *://*.spareroom.co.uk/rooms-for-rent/*
+// @match        *://*.spareroom.com/rooms-for-rent/*
 // @noframes
-
 // ==/UserScript==
 
 /* jshint ignore:start */
