@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spareroom Directions to Work
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
 // @license      MIT
@@ -22,7 +22,7 @@ var inline_src = (<><![CDATA[
     /* jshint esnext: false */
     /* jshint esversion: 6 */
 
-(function() {
+(function(){
     'use strict';
 
     if (typeof(jQuery)  === "undefined"){
@@ -30,7 +30,7 @@ var inline_src = (<><![CDATA[
     }
 
     jQuery(function($){
-        var map = $('.feature--map');
+        let map = $('.feature--map');
         if (map.length === 0){
             return
         }
@@ -46,7 +46,7 @@ var inline_src = (<><![CDATA[
         //
         // Currently we parse this script tag as text, would be better if
         // the coords could be located in the SR data structure directly.
-        var script_tag = $('script')
+        let script_tag = $('script')
             .filter(
                 function(i, e){
                     return $(e).text().indexOf('SR.listing.detail.init({') >= 0;
@@ -54,7 +54,7 @@ var inline_src = (<><![CDATA[
             ).text()
              .split('coords:')[1].split('})')[0];
 
-        var coords = JSON.parse(
+        let coords = JSON.parse(
             script_tag
             .replace(/lat/, '"lat"')
             .replace(/lon/, '"lon"')
@@ -62,17 +62,22 @@ var inline_src = (<><![CDATA[
         );
 
         // https://developers.google.com/maps/documentation/urls/guide#directions-action
-        var base = 'https://www.google.com/maps/dir/?api=1&travelmode=transit&';
+        let base = 'https://www.google.com/maps/dir/?api=1';
+        let origin = `${coords.lat},${coords.lon}`;
+        // TODO: find a way to make travelmode and dest customisable
+        let travelmode = 'transit';
         // This relies on setting your workplace in your Google Maps account.
         // See https://support.google.com/maps/answer/3093979
-        var dest = 'Work';
-        var url = `${base}origin=${coords.lat},${coords.lon}&destination=${dest}`;
+        let dest = 'Work';
+        let url = `${base}&travelmode=${travelmode}&origin=${origin}&destination=${dest}`;
 
-        map.append('<button id="d2work">Directions to Work</button>');
-
-        $('#d2work').click(function(){
-            window.open(url);
-        });
+        $('<button/>')
+            .text('Directions to Work')
+            .appendTo(map)
+            .click(function(){
+                window.open(url);
+            })
+            .wrap('<p></p>');
     })
 
 })();
