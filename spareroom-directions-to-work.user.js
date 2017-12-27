@@ -5,6 +5,7 @@
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
 // @license      MIT
+// @homepageURL  https://github.com/tomviner/spareroom-directions
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @match        *://*.spareroom.co.uk/flatshare/*
@@ -19,20 +20,20 @@
 /* jshint ignore:start */
 var inline_src = (<><![CDATA[
 /* jshint ignore:end */
-    /* jshint esnext: false */
-    /* jshint esversion: 6 */
+/* jshint esnext: false */
+/* jshint esversion: 6 */
 
 (function(){
     'use strict';
 
     if (typeof(jQuery)  === "undefined"){
-        return
+        return;
     }
 
     jQuery(function($){
         let map = $('.feature--map');
         if (map.length === 0){
-            return
+            return;
         }
 
         // Flat coords are written in a script tag as follows:
@@ -47,12 +48,10 @@ var inline_src = (<><![CDATA[
         // Currently we parse this script tag as text, would be better if
         // the coords could be located in the SR data structure directly.
         let script_tag = $('script')
-            .filter(
-                function(i, e){
-                    return $(e).text().indexOf('SR.listing.detail.init({') >= 0;
-                }
-            ).text()
-             .split('coords:')[1].split('})')[0];
+        .filter(function(i, e){
+            return $(e).text().indexOf('SR.listing.detail.init({') >= 0;
+        }).text()
+          .split('coords:')[1].split('})')[0];
 
         let coords = JSON.parse(
             script_tag
@@ -78,7 +77,7 @@ var inline_src = (<><![CDATA[
                 window.open(url);
             })
             .wrap('<p></p>');
-    })
+    });
 
 })();
 /* jshint ignore:start */
