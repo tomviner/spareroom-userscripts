@@ -4,6 +4,7 @@
 // @version      0.1
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
+// @license      MIT
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @match        ://*spareroom.co.uk/flatshare/*
