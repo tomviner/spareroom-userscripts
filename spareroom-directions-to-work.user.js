@@ -26,17 +26,21 @@ var inline_src = (<><![CDATA[
 (function(){
     'use strict';
 
+    // We rely on Spareroom's jQuery
     if (typeof(jQuery)  === "undefined"){
         return;
     }
 
     jQuery(function($){
         let map = $('.feature--map');
+        // The url @match patterns on this script are liberal as Spareroom
+        // puts list and detail views on a variety of similar paths.
+        // For this reason, we make an effort to terminate early.
         if (map.length === 0){
             return;
         }
 
-        // Flat coords are written in a script tag as follows:
+        // Property coordinates are written in the page as follows:
         //
         // SR.listing.detail.init({
         //   coords: {
@@ -45,20 +49,24 @@ var inline_src = (<><![CDATA[
         //   }
         // });
         //
-        // Currently we parse this script tag as text, would be better if
-        // the coords could be located in the SR data structure directly.
+        // Currently we scrape this from a script tag as text, would be better
+        // if the coords could be located in the SR data structure directly.
         let script_tag = $('script')
-        .filter(function(i, e){
-            return $(e).text().indexOf('SR.listing.detail.init({') >= 0;
-        }).text()
-          .split('coords:')[1].split('})')[0];
+            .filter(function(i, e){
+                // filter by presence of a "unique string"
+                return $(e).text().indexOf('SR.listing.detail.init({') >= 0;
+            });
 
-        let coords = JSON.parse(
-            script_tag
+        // Basically screenscraping. Contributions welcome!
+        let coords_json = script_tag
+            .text()
+            .split('coords:')[1]
+            .split('})')[0]
             .replace(/lat/, '"lat"')
             .replace(/lon/, '"lon"')
-            .replace(/'/g, '"')
-        );
+            .replace(/'/g, '"');
+
+        let coords = JSON.parse(coords_json);
 
         // https://developers.google.com/maps/documentation/urls/guide#directions-action
         let base = 'https://www.google.com/maps/dir/?api=1';
