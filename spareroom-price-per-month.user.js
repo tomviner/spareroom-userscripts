@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spareroom Prices per Calendar Month
 // @namespace    https://github.com/tomviner/spareroom-userscripts/
-// @version      0.1
+// @version      0.2
 // @description  Add prices per calendar month to Spareroom flat listings pages with per week prices
 // @author       Tom V
 // @license      MIT
@@ -87,7 +87,7 @@ var inline_src = (<><![CDATA[
         prices.each(function(i, el){
             let price = $(el);
             // Fix prices like £275 pw
-            let match = price.text().match(/(£)(\d+) pw/);
+            let match = price.text().match(/(£|\$|€)(\d+) (?:pw|weekly)/);
             if (match){
                 let curr_symbol = match[1];
                 let pw = parseInt(match[2]);
