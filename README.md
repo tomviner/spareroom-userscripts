@@ -4,10 +4,10 @@ Userscripts to make it easier to find a new flat with Spareroom.
 ## Directions to Work
 Userscript to add a *Directions to Work* button to Spareroom flat listings pages
 
-## Install
+### Install
 https://openuserjs.org/scripts/tomviner/Spareroom_Directions_to_Work
 
-## Instructions
+### Instructions
 - Install a browser extension to run userscripts, such as [Tampermonkey](http://tampermonkey.net/)
 - Install the [Spareroom_Directions_to_Work](https://openuserjs.org/scripts/tomviner/Spareroom_Directions_to_Work) userscript
 - [Set your workplace](https://support.google.com/maps/answer/3093979) in your Google Maps account
@@ -20,10 +20,10 @@ https://openuserjs.org/scripts/tomviner/Spareroom_Directions_to_Work
 ## Prices in Per Calendar Month
 Userscript to always show prices in Per Calendar Month
 
-## Install
+### Install
 https://openuserjs.org/scripts/tomviner/Spareroom_Prices_per_Calendar_Month
 
-## Instructions
+### Instructions
 - Install a browser extension to run userscripts, such as [Tampermonkey](http://tampermonkey.net/)
 - Install the [Spareroom_Prices_per_Calendar_Month](https://openuserjs.org/scripts/tomviner/Spareroom_Prices_per_Calendar_Month) userscript
 - Visit any Spareroom flat detail page, and you should prices PCM
