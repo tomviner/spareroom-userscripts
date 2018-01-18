@@ -1,13 +1,11 @@
 // ==UserScript==
 // @name         Spareroom Directions to Work
 // @namespace    https://github.com/tomviner/spareroom-userscripts/
-// @version      0.6
+// @version      0.7
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
 // @license      MIT
 // @homepageURL  https://github.com/tomviner/spareroom-userscripts
-// @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
-// @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @match        *://*.spareroom.co.uk/flatshare/*
 // @match        *://*.spareroom.com/flatshare/*
 // @match        *://*.spareroom.co.uk/roommate/*
