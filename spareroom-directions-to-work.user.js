@@ -15,8 +15,8 @@
 // @match        *://*.spareroom.co.uk/rooms-for-rent/*
 // @match        *://*.spareroom.com/rooms-for-rent/*
 // @noframes
-// ==/UserScript==
 
+// ==/UserScript==
 /* jshint ignore:end */
 /* jshint esnext: false */
 /* jshint esversion: 6 */
