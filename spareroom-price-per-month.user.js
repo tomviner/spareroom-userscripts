@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spareroom Prices per Calendar Month
 // @namespace    https://github.com/tomviner/spareroom-userscripts/
-// @version      0.2
+// @version      0.3
 // @description  Add prices per calendar month to Spareroom flat listings pages with per week prices
 // @author       Tom V
 // @license      MIT
