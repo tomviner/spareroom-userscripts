@@ -26,7 +26,7 @@ https://openuserjs.org/scripts/tomviner/Spareroom_Prices_per_Calendar_Month
 ### Instructions
 - Install a browser extension to run userscripts, such as [Tampermonkey](http://tampermonkey.net/)
 - Install the [Spareroom_Prices_per_Calendar_Month](https://openuserjs.org/scripts/tomviner/Spareroom_Prices_per_Calendar_Month) userscript
-- Visit any Spareroom flat detail page, and you should prices PCM
+- Visit any Spareroom flat detail page, and you should see prices PCM
 
 ![screenshot from 2017-12-31 00-57-08](https://user-images.githubusercontent.com/167319/34458337-a264ad0e-edc5-11e7-9e3e-34ce3c3e6277.png)
 ![screenshot from 2017-12-31 00-56-33](https://user-images.githubusercontent.com/167319/34458338-a2856a3a-edc5-11e7-921b-907cb5d0a695.png)
