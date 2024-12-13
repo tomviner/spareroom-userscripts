@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spareroom Directions to Work
 // @namespace    https://github.com/tomviner/spareroom-userscripts/
-// @version      0.7
+// @version      0.8
 // @description  Add a Directions to Work button to Spareroom flat listings pages
 // @author       Tom V
 // @license      MIT
